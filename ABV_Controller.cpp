@@ -17,18 +17,18 @@ int main()
     // Initialize ROS2
     rclcpp::init(0, nullptr);
 
+    // The main vehicle object
     std::shared_ptr<Vehicle> abv = std::make_shared<Vehicle>();
 
+    // The main state machine
     MainStateMachine* stateMachine = new MainStateMachine(abv);
     
     // run the state machine
     stateMachine->run();
 
+    // shut it all down
     delete stateMachine;
-
     rclcpp::shutdown();
 
     return 0;
-
-
 }

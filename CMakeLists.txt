@@ -11,7 +11,6 @@ find_package(std_msgs REQUIRED)
 
 set(ABV_CONTROLLER_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/ABV_Controller.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/src/External/ROS/RosTopicManager.cpp
     ${ABV_STATE_MACHINE_SOURCES}
     ${ABV_GENERAL_SOURCES}
     ${ABV_EXTERNAL_SOURCES}
