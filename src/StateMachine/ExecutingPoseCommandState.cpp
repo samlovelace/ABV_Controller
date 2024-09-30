@@ -2,7 +2,7 @@
 #include "ExecutingPoseCommandState.h"
 
 
-ExecutingPoseCommandState::ExecutingPoseCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv)
+ExecutingPoseCommandState::ExecutingPoseCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv) : State(sm), mVehicle(abv)
 {
 }
 

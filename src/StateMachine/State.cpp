@@ -1,7 +1,7 @@
 #include "State.h"
 #include "MainStateMachine.h"
 
-State::State(MainStateMachine* msm) : mStateMachine(msm)
+State::State(StateMachine* sm) : mStateMachine(sm)
 {
 }
 
@@ -16,5 +16,6 @@ void State::requestStateChange(unsigned int toState)
 
 std::shared_ptr<Vehicle> State::getVehicle()
 {
-    return mStateMachine->getVehicle();
+    // i dont like this 
+    return mStateMachine->mVehicle;
 }

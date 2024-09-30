@@ -4,7 +4,7 @@ class WaitingForThrusterCommandState : public State
 {
 
 public:
-    WaitingForThrusterCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    WaitingForThrusterCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~WaitingForThrusterCommandState();
 
     void update(); 

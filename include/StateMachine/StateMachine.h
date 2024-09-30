@@ -13,9 +13,11 @@ class StateMachine
 protected: 
     unsigned int mCurrentState; 
     std::vector<State*> mStates; 
+    std::shared_ptr<Vehicle> mVehicle;
+
 
 public:
-    StateMachine(/* args */);
+    StateMachine(std::shared_ptr<Vehicle> abv);
     ~StateMachine();
 
     void run(); 

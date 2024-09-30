@@ -2,12 +2,12 @@
 #define INITIALIZINGSTATE_H
 
 #include "State.h"
-//#include "Vehicle.h"
+#include "StateMachine.h"
 
 class InitializingState : public State
 {
 public:
-    InitializingState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    InitializingState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~InitializingState(); 
 
     void update() override; 

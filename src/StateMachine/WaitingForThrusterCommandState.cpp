@@ -1,6 +1,6 @@
 #include "WaitingForThrusterCommandState.h"
 
-WaitingForThrusterCommandState::WaitingForThrusterCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv)
+WaitingForThrusterCommandState::WaitingForThrusterCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv) : State(sm), mVehicle(abv)
 {
 }
 

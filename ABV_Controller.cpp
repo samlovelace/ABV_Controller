@@ -13,9 +13,11 @@ void handleSigint(int signal) {
 
 int main()
 {
-    createLogger(); // Initialize the logger
- 
-    std::signal(SIGINT, handleSigint); // Register the signal handler
+    // Register the signal handler
+    std::signal(SIGINT, handleSigint);
+
+    // initialize the file and console logger
+    createLogger(); 
 
     // Initialize ROS2
     rclcpp::init(0, nullptr);

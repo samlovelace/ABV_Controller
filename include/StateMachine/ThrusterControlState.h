@@ -4,7 +4,7 @@
 class ThrusterControlState : public State, public StateMachine
 {
 public:
-    ThrusterControlState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    ThrusterControlState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~ThrusterControlState();
 
     void update(); 

@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "plog/Log.h"
 
-InitializingState::InitializingState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv), mCount(0), mInitialized(false)
+InitializingState::InitializingState(StateMachine* sm, std::shared_ptr<Vehicle> abv) : State(sm), mVehicle(abv), mCount(0), mInitialized(false)
 {
 
 

@@ -20,7 +20,7 @@ public:
     std::shared_ptr<Vehicle> getVehicle() { return mVehicle; }
 
 private:
-    std::shared_ptr<Vehicle> mVehicle;
+    
 };
 
 #endif

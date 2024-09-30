@@ -5,12 +5,12 @@
 #include "Vehicle.h"
 #include "StateEnum.h"
 
-class MainStateMachine; 
+class StateMachine; 
 
 class State
 {
 public:
-    State(MainStateMachine* msm);
+    State(StateMachine* msm);
     virtual ~State();
 
     virtual void update() = 0;
@@ -19,7 +19,7 @@ public:
     std::shared_ptr<Vehicle> getVehicle();
 
 private:
-    MainStateMachine* mStateMachine; 
+    StateMachine* mStateMachine; 
 
 };
 #endif

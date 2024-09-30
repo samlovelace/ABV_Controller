@@ -6,7 +6,7 @@
 class WaitingForPoseCommandState : public State
 {
 public:
-    WaitingForPoseCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    WaitingForPoseCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~WaitingForPoseCommandState();
 
     void update() override;

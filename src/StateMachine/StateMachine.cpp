@@ -1,6 +1,6 @@
 #include "StateMachine.h"
 
-StateMachine::StateMachine(/* args */)
+StateMachine::StateMachine(std::shared_ptr<Vehicle> abv) : mVehicle(abv)
 {
     mCurrentState = 0; 
 }

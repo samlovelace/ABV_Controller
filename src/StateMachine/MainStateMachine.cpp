@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include "plog/Log.h"
 
-MainStateMachine::MainStateMachine(std::shared_ptr<Vehicle> abv) : mVehicle(abv)
+MainStateMachine::MainStateMachine(std::shared_ptr<Vehicle> abv) : StateMachine(abv)
 {
     mCurrentState = 0; 
     mStates.push_back(new InitializingState(this, abv));
@@ -40,6 +40,6 @@ void MainStateMachine::run()
 
 void MainStateMachine::setState(unsigned int s)
 {
-    PLOG_INFO << "Changing state from " << MainStates::names[mCurrentState] << " to " << MainStates::names[s];
+    PLOG_INFO << "[MSM] Changing state from " << MainStates::names[mCurrentState] << " to " << MainStates::names[s];
     StateMachine::setState(s); 
 }

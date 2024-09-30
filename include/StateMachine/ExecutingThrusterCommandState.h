@@ -7,7 +7,7 @@
 class ExecutingThrusterCommandState : public State
 {
 public:
-    ExecutingThrusterCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    ExecutingThrusterCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~ExecutingThrusterCommandState();
 
     void update(); 

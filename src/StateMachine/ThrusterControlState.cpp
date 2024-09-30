@@ -2,9 +2,10 @@
 #include "WaitingForThrusterCommandState.h"
 #include "ExecutingThrusterCommandState.h"
 
-ThrusterControlState::ThrusterControlState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm)
+ThrusterControlState::ThrusterControlState(StateMachine* sm, std::shared_ptr<Vehicle> abv) : State(sm), StateMachine(abv)
 {
-    mStates.push_back(new WaitingForThrusterCommandState(msm, abv));
+    mStates.push_back(new WaitingForThrusterCommandState(this, abv));
+    mStates.push_back(new ExecutingThrusterCommandState(this, abv));
 }
 
 ThrusterControlState::~ThrusterControlState()

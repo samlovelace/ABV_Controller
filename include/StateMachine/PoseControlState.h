@@ -7,7 +7,7 @@
 class PoseControlState : public State, StateMachine
 {
 public:
-    PoseControlState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    PoseControlState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~PoseControlState();
 
     // state functions 

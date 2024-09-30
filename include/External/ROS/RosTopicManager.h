@@ -3,6 +3,7 @@
 
 #include <rclcpp/rclcpp.hpp>
 #include <std_msgs/msg/string.hpp>
+#include <std_msgs/msg/float64_multi_array.hpp>
 
 class RosTopicManager : public rclcpp::Node
 {
@@ -18,6 +19,9 @@ public:
 
     void createModeSubscriber(const std::string& topic_name,
                           std::function<void(const std_msgs::msg::String::SharedPtr)> callback);
+
+    void createInputSubscriber(const std::string& topic_name,
+                          std::function<void(const std_msgs::msg::Float64MultiArray::SharedPtr)> callback);
 
     template<typename T>
     void createPublisher(const std::string& topicName) 
@@ -58,6 +62,7 @@ private:
 
     std::map<std::string, rclcpp::PublisherBase::SharedPtr> mPublishers;
     rclcpp::Subscription<std_msgs::msg::String>::SharedPtr mModeSubscriber;
+    rclcpp::Subscription<std_msgs::msg::Float64MultiArray>::SharedPtr mInputSubscriber;
 };
 
 #endif

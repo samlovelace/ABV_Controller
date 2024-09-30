@@ -1,6 +1,6 @@
 #include "ExecutingThrusterCommandState.h"
 
-ExecutingThrusterCommandState::ExecutingThrusterCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv)
+ExecutingThrusterCommandState::ExecutingThrusterCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv) : State(sm), mVehicle(abv)
 {
 
 }

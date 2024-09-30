@@ -5,7 +5,7 @@
 class ExecutingPoseCommandState : public State
 {
 public:
-    ExecutingPoseCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
+    ExecutingPoseCommandState(StateMachine* sm, std::shared_ptr<Vehicle> abv);
     ~ExecutingPoseCommandState();
 
     void update(); 

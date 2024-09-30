@@ -1,7 +1,7 @@
 #include "WaitingForModeState.h"
 #include <stdio.h>
 
-WaitingForModeState::WaitingForModeState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv)
+WaitingForModeState::WaitingForModeState(StateMachine* sm, std::shared_ptr<Vehicle> abv) : State(sm), mVehicle(abv)
 {
 }
 

@@ -11,7 +11,6 @@
 #include <plog/Init.h>
 #include <plog/Initializers/RollingFileInitializer.h>
 #include <plog/Appenders/ColorConsoleAppender.h>
-//#include "logutils.h"
 
 #ifdef _WIN32
 #include <io.h>
@@ -21,9 +20,6 @@
 #endif
 
 namespace fs = std::filesystem;
-
-// TO DO: Determine the correct relative path for the config file
-std::string configFile = "config.xml";
 
 // Function to check if a directory exists (cross-platform)
 bool directoryExists(const std::string& directoryName) {
@@ -63,7 +59,7 @@ void createLogger() {
 
     // Full paths for log files
     std::string logFilePath = directoryName + "/" + logFileName;
-    std::string datalogFilePath = directoryName + "/" + datalogFileName;
+    //std::string datalogFilePath = directoryName + "/" + datalogFileName;
 
     // Initialize logger with CSV file name and console logger
     static plog::RollingFileAppender<plog::CsvFormatter> fileAppender(logFilePath.c_str());  // Create the 1st appender.
@@ -74,9 +70,9 @@ void createLogger() {
     PLOG_INFO << logFileName << " created";
 
     // Initialize a separate logger for the data log file
-    static plog::RollingFileAppender<plog::TxtFormatter> dataFileAppender(datalogFilePath.c_str());
-    plog::init<1>(plog::verbose, &dataFileAppender);  // Use a separate instance for the data log
+    //static plog::RollingFileAppender<plog::TxtFormatter> dataFileAppender(datalogFilePath.c_str());
+    //plog::init<1>(plog::verbose, &dataFileAppender);  // Use a separate instance for the data log
 
     // Log the creation of the data log file
-    PLOG_INFO << datalogFileName << " created";
+    //PLOG_INFO << datalogFileName << " created";
 }
