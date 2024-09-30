@@ -5,10 +5,13 @@
 
 class WaitingForPoseCommandState : public State
 {
-private:
-    /* data */
 public:
-    WaitingForPoseCommandState(MainStateMachine* msm);
+    WaitingForPoseCommandState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
     ~WaitingForPoseCommandState();
+
+    void update() override;
+
+private:
+    std::shared_ptr<Vehicle> mVehicle; 
 };
 #endif

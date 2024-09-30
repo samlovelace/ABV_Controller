@@ -9,9 +9,9 @@ State::~State()
 {
 }
 
-void State::requestStateChange(MainStates::State aState)
+void State::requestStateChange(unsigned int toState)
 {
-    mStateMachine->changeState(aState);
+    mStateMachine->setState(toState);
 }
 
 std::shared_ptr<Vehicle> State::getVehicle()

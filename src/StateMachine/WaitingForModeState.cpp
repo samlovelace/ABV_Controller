@@ -1,7 +1,7 @@
 #include "WaitingForModeState.h"
 #include <stdio.h>
 
-WaitingForModeState::WaitingForModeState(MainStateMachine* msm) : State(msm)
+WaitingForModeState::WaitingForModeState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv)
 {
 }
 
@@ -12,23 +12,21 @@ WaitingForModeState::~WaitingForModeState()
 
 void WaitingForModeState::update()
 {
-    std::shared_ptr<Vehicle> vehicle = getVehicle();
-
-    if(!vehicle->isModeCommandRecvd())
+    if(!mVehicle->isModeCommandRecvd())
     {
         return;
     }
 
-    ABV_MODE_COMMAND mode = vehicle->getCommandMode(); 
+    Vehicle::Mode mode = mVehicle->getCommandMode(); 
 
-    if(ABV_MODE_COMMAND::POSE == mode)
+    if(Vehicle::Mode::POSE == mode)
     {
-        requestStateChange(MainStates::State::WAITING_FOR_POSE_COMMAND);
+        requestStateChange(MainStates::POSE_CONTROL);
         return; 
     }
-    else if(ABV_MODE_COMMAND::THRUSTERS == mode)
+    else if(Vehicle::Mode::THRUSTER == mode)
     {
-        requestStateChange(MainStates::State::WAITING_FOR_THRUSTER_COMMAND);
+        requestStateChange(MainStates::THRUSTER_CONTROL);
         return; 
     }
 

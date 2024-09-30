@@ -6,13 +6,13 @@
 class WaitingForModeState : public State
 {
 public:
-    WaitingForModeState(MainStateMachine* msm);
+    WaitingForModeState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv);
     ~WaitingForModeState();
 
     void update() override;
 
 private:
-    /* data */
+    std::shared_ptr<Vehicle> mVehicle; 
 
 };
 #endif

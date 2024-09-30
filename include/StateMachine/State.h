@@ -15,7 +15,7 @@ public:
 
     virtual void update() = 0;
 
-    void requestStateChange(MainStates::State aState);
+    void requestStateChange(unsigned int toState);
     std::shared_ptr<Vehicle> getVehicle();
 
 private:

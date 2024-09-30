@@ -5,25 +5,54 @@
 
 namespace MainStates
 {
-    enum class State
+    enum State
     {
         INITIALIZING,
-        WAITING_FOR_MODE
+        WAITING_FOR_MODE, 
+        POSE_CONTROL, 
+        THRUSTER_CONTROL
     };
 
     inline const char* names[] =
     {
         "Initializing",
-        "WaitingForMode"
+        "WaitingForMode", 
+        "PoseControl", 
+        "ThrusterControl"
     };
 }
 
-namespace PoseControllerStates
+namespace PoseControlStates
 {
-    enum class State
+    enum States
     {
         WAITING_FOR_POSE_COMMAND,
-        EXECUTING_POSE_COMMAND
+        EXECUTING_POSE_COMMAND, 
+        DONE
+    };
+
+    inline const char* names[] = 
+    {
+        "WaitingForPoseCommand", 
+        "ExecutingPoseCommand",
+        "Done"
+    };
+}
+
+namespace ThrusterControlStates
+{
+    enum States
+    {
+        WAITING_FOR_THRUSTER_COMMAND, 
+        EXECUTING_THRUSTER_COMMAND, 
+        DONE
+    };
+
+    inline const char* names[] = 
+    {
+        "WaitingForThrusterCommand", 
+        "ExecutingThrusterCommand", 
+        "Done"
     };
 }
 
