@@ -6,6 +6,7 @@
 #include "ThrusterControlState.h"
 #include <thread>
 #include <stdio.h>
+#include "plog/Log.h"
 
 MainStateMachine::MainStateMachine(std::shared_ptr<Vehicle> abv) : mVehicle(abv)
 {
@@ -39,6 +40,6 @@ void MainStateMachine::run()
 
 void MainStateMachine::setState(unsigned int s)
 {
-    printf("Changing state from %s to %s\n", MainStates::names[mCurrentState], MainStates::names[s]);
+    PLOG_INFO << "Changing state from " << MainStates::names[mCurrentState] << " to " << MainStates::names[s];
     StateMachine::setState(s); 
 }

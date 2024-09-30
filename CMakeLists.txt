@@ -26,6 +26,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/include/StateMachine
     ${CMAKE_CURRENT_LIST_DIR}/include/External/ROS
     ${CMAKE_CURRENT_LIST_DIR}/include/General
+    ${CMAKE_CURRENT_LIST_DIR}/include/External/plog/plog-master/include
     ${rclcpp_INCLUDE_DIRS}
     ${std_msgs_INCLUDE_DIRS}
 )

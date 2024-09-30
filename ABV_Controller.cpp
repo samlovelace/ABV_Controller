@@ -2,6 +2,7 @@
 #include "MainStateMachine.h"
 #include "Vehicle.h"
 #include <rclcpp/rclcpp.hpp>
+#include "ABV_Logger.h"
 
 // Signal handler function
 void handleSigint(int signal) {
@@ -12,6 +13,8 @@ void handleSigint(int signal) {
 
 int main()
 {
+    createLogger(); // Initialize the logger
+ 
     std::signal(SIGINT, handleSigint); // Register the signal handler
 
     // Initialize ROS2

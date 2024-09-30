@@ -1,6 +1,7 @@
 
 #include "InitializingState.h"
 #include <stdio.h>
+#include "plog/Log.h"
 
 InitializingState::InitializingState(MainStateMachine* msm, std::shared_ptr<Vehicle> abv) : State(msm), mVehicle(abv), mCount(0), mInitialized(false)
 {
@@ -15,8 +16,10 @@ InitializingState::~InitializingState()
 
 void InitializingState::update()
 {
-    // setup rclcpp 
+    PLOG_INFO << "[MSM] Initializing the main state machine."; // setup rclcpp 
+    
     // setup other things.... 
+    // Setup other things...
     
     if(isInitialized())
     {
@@ -25,6 +28,5 @@ void InitializingState::update()
     else
     {
         mInitialized = true; 
-        printf("Initializing...\n");
     }
 }
